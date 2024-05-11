@@ -1,8 +1,9 @@
 export function Convert(str: string) {
   let tempString = "";
+  console.log(str);
   if (
-    str.toLowerCase().split(" ").indexOf("или") > -1 ||
-    str.toLowerCase().split(" ").indexOf("и")
+    str.toLowerCase().split(" ").indexOf("или") !== -1 ||
+    str.toLowerCase().split(" ").indexOf("и") !== -1
   ) {
     let tempArr = str.split(" ");
     tempArr.forEach((item: string, index: number) => {
@@ -13,8 +14,13 @@ export function Convert(str: string) {
       }
     });
     tempString = tempArr.join(" ");
+    return tempString;
+  } else if (
+    str.toLowerCase().split(" ").indexOf("+") !== -1 ||
+    str.toLowerCase().split(" ").indexOf("*") !== -1
+  ) {
+    return str;
   } else {
-    tempString = str;
+    return false;
   }
-  return tempString;
 }
