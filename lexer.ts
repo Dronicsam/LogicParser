@@ -28,7 +28,6 @@ export default class Lexer {
   #at() {
     return this.#stream[this.#cursor];
   }
-  #createToken() {}
   tokenize(input = "") {
     this.#stream = input;
     this.#cursor = 0;

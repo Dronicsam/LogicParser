@@ -17,10 +17,6 @@ export default class Parser {
     return this.#tokens[this.#cursor];
   }
 
-  // #peak(n = 1) {
-  //   return this.#tokens[this.#cursor + n];
-  // }
-
   #eatToken(tokenType: string) {
     if (tokenType == this.#at().type) {
       this.#cursor++;
@@ -43,7 +39,6 @@ export default class Parser {
       this.#eatToken(TokenTypes.L_PAREN);
       let expr = this.#parse_expression();
       this.#eatToken(TokenTypes.R_PAREN);
-
       return expr;
     }
     throw Error(

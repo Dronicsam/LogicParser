@@ -1,6 +1,5 @@
 export function Convert(str: string) {
   let tempString = "";
-  console.log(str);
   if (
     str.toLowerCase().split(" ").indexOf("или") !== -1 ||
     str.toLowerCase().split(" ").indexOf("и") !== -1
